@@ -1,0 +1,22 @@
+# Core libraries
+numpy
+pandas
+matplotlib
+seaborn
+scikit-learn
+
+# Image processing
+opencv-python
+Pillow
+
+# PyTorch (for model training)
+torch
+torchvision
+torchaudio
+
+# TensorFlow (for VGG16 & alternative deep learning models)
+tensorflow
+
+# Miscellaneous
+tqdm  # For progress bars
+argparse  # For command-line execution
