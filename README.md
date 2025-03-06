@@ -13,8 +13,12 @@ This repository contains the code and resources for the project **"Evaluating th
 │   ├── train.py              # Training script for models
 │   ├── evaluate.py           # Model evaluation script
 │   ├── models.py             # Model architectures (CNN, ResNet50, VGG16, ViT-B/16)
+│   ├── config.yaml           # Configuration file for hyperparameters and settings
+│   ├── cli.py                # Command-line interface for running scripts
 ├── results/                  # Evaluation results and reports
 ├── requirements.txt          # List of dependencies
+├── Dockerfile                # Docker setup for easy execution
+├── run_colab.ipynb           # Colab notebook for easy usage
 ├── README.md                 # Project documentation (this file)
 └── LICENSE                   # License file
 ```
@@ -37,21 +41,28 @@ To set up the environment and run the code, follow these steps:
    pip install -r requirements.txt
    ```
 
-## Dataset
-This project uses the **Messidor** and **IDRiD** datasets for training and evaluation. Due to licensing restrictions, the datasets are not included in this repository. You can download them from their official sources and place them in the `data/` directory.
-
-## Training the Models
-To train a model, run:
+## Running the Code
+### **Using CLI**
+To preprocess the data, train a model, and evaluate results, run:
 ```bash
-python src/train.py --model vit --epochs 50 --batch_size 32
+python src/cli.py --task preprocess
+python src/cli.py --task train --model vit --epochs 50 --batch_size 32
+python src/cli.py --task evaluate --model vit
 ```
 Replace `vit` with `cnn`, `resnet50`, or `vgg16` to train different models.
 
-## Evaluating the Models
-After training, evaluate the models using:
+### **Using Docker**
+Build and run the container:
 ```bash
-python src/evaluate.py --model vit --dataset test
+docker build -t dr-detection .
+docker run --rm dr-detection --task train --model vit
 ```
+
+### **Using Google Colab**
+Open the provided **`run_colab.ipynb`** notebook for execution in the cloud.
+
+## Dataset
+This project uses the **Messidor** and **IDRiD** datasets for training and evaluation. Due to licensing restrictions, the datasets are not included in this repository. You can download them from their official sources and place them in the `data/` directory.
 
 ## Results
 - The **ViT-B/16** model achieved the highest accuracy of **77.78%**, outperforming CNN-based models.
@@ -71,4 +82,5 @@ This project is licensed under the [Creative Commons BY-NC 3.0 License](https://
 - **Tutor:** Alfredo Madrid García
 - **SRP Supervisor:** Dra. Agnès Perez Millan
 - **Program:** Màster en Bioinformàtica i Bioestadística
+
 
