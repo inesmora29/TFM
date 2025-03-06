@@ -9,14 +9,17 @@ scikit-learn
 opencv-python
 Pillow
 
-# PyTorch (for model training)
-torch
-torchvision
-torchaudio
+# PyTorch (GPU Support)
+torch==2.0.1+cu118
+torchvision==0.15.2+cu118
+torchaudio==2.0.2+cu118
+# If using CPU only, replace with: torch torchvision torchaudio
 
-# TensorFlow (for VGG16 & alternative deep learning models)
-tensorflow
+# TensorFlow (GPU Support)
+tensorflow==2.12.0
+tensorflow-gpu==2.12.0
 
 # Miscellaneous
 tqdm  # For progress bars
 argparse  # For command-line execution
+
