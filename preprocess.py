@@ -6,7 +6,12 @@ from torchvision import transforms
 from sklearn.model_selection import train_test_split
 
 # Dataset paths
-FOLDER_PATHS = ["data/Base11", "data/Base12", "data/Base13", "data/Base14", "data/IDRID"]
+FOLDER_PATHS = [
+    'data/Base11', 'data/Base12', 'data/Base13', 'data/Base14', 'data/Base21', 'data/Base22',
+    'data/Base23', 'data/Base24', 'data/Base31', 'data/Base32', 'data/Base33', 'data/Base34',
+    'data/IDRID'
+]
+
 INPUT_SIZE = (224, 224)
 
 def get_diagnostics(folder_paths):
