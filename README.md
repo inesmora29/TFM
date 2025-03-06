@@ -28,7 +28,7 @@ To set up the environment and run the code, follow these steps:
 
 1. Clone this repository:
    ```bash
-   git clone https://github.com/your-username/diabetic-retinopathy-detection.git
+   git clone https://github.com/inesmora29/diabetic-retinopathy-detection.git
    cd diabetic-retinopathy-detection
    ```
 2. Create a virtual environment (optional but recommended):
@@ -49,7 +49,7 @@ python src/cli.py --task preprocess
 python src/cli.py --task train --model vit --epochs 50 --batch_size 32
 python src/cli.py --task evaluate --model vit
 ```
-Replace `vit` with `cnn`, `resnet50`, or `vgg16` to train different models.
+Replace `vit` with `customcnn`, `resnet50`, or `vgg16` to train different models.
 
 ### **Using Docker**
 Build and run the container:
